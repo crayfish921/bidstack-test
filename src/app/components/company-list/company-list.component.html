@@ -1,0 +1,9 @@
+<div class='companies-controls'>
+    <app-add-company-button></app-add-company-button>
+    <app-companies-search (searchTermEmitter)='setSearchTerm($event)'></app-companies-search>
+</div>
+<div class='companies-container'>
+    <div *ngFor='let company of companies | companiesSearch: searchTerm' (click)='gotoCompany(company)' style="cursor: pointer;">
+        <app-company-card  [data]='company'></app-company-card>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="company$ | async as company">
+    <div style="padding-bottom: 10px;">{{company.company_name}}</div>
+    All Campaigns:
+    <div *ngFor="let entity of company.companies">
+        {{entity.title}}
+    </div>
+</div>
+
+<button [routerLink]="['/list']">Go back</button>

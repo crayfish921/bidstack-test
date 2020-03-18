@@ -1,0 +1,32 @@
+<div class="company-card">
+    <div class="company-card-header">
+        <img class="company-card-header-logo" src={{data?.logo}}/>
+        <div class="company-card-header-text">{{data?.company_name}}</div>
+    </div>
+    <div class="company-card-body">
+        <div class="company-card-body-row">
+            <div class="company-card-body-row-text">{{data?.companies | statusLength:true}} Active Campaigns</div>
+            <div class="company-card-body-row-view" appCompaniesTooltip>View
+                <ng-template #tooltipTemplate>
+                    <app-tooltip [data]="data?.companies | statusLength:true:'array'"></app-tooltip>
+                </ng-template>
+            </div>
+        </div>
+        <div class="company-card-body-row">
+            <div class="company-card-body-row-text">{{data?.companies | statusLength:false}} Previous Campaigns</div>
+            <div class="company-card-body-row-view" appCompaniesTooltip>View
+                <ng-template #tooltipTemplate>
+                    <app-tooltip [data]="data?.companies | statusLength:false:'array'"></app-tooltip>
+                </ng-template>
+            </div>
+        </div>
+        <div class="company-card-body-row">
+            <div class="company-card-body-row-text">{{data?.active_games?.length}} Active Games</div>
+            <div class="company-card-body-row-view" appCompaniesTooltip>View
+                <ng-template #tooltipTemplate>
+                    <app-tooltip [data]="data?.active_games"></app-tooltip>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

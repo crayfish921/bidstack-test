@@ -1,0 +1,11 @@
+@import './../../variables.scss';
+
+button {
+    background-color: $bidstack-background-color;
+    border: none;
+    padding: 8px 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
